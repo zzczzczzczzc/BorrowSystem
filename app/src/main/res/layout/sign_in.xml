@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sign_in_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="服务分类"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_1">
+
+
+            <RadioButton
+                android:id="@+id/rb_unlimited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="不限"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:id="@+id/rb_purchasing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="代购"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:id="@+id/rb_drive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="出行"
+                android:textSize="20dp" />
+
+            <RadioButton
+                android:id="@+id/rb_domestic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="家政"
+                android:textSize="20dp" />
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl">
+
+    </ListView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/bt_accept"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#B0C4DE"
+            android:text="接单"
+            android:textColor="#00008B"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+</RelativeLayout>
