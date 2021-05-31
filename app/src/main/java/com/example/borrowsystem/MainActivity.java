@@ -21,12 +21,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         //创建数据库和表
         helper = new DBHelper(this);
-        SQLiteDatabase db = helper.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put("count", "1");
-        values.put("password", "2");
-        db.insert("user", null, values);
-        db.close();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button bt_signUp = (Button) findViewById(R.id.bt_signUp);
@@ -52,21 +46,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String password = et_password.getText().toString().trim();
                 if (count.equals("") || password.equals("")) {
                     Toast.makeText(this, "账号或密码不能为空", Toast.LENGTH_SHORT).show();
+                } else {
+                    Cursor cursor = db.rawQuery("select * from user where count = ?", new String[]{count});
+                    if (cursor.getCount() == 0) {
+                        Toast.makeText(this, "该账号不存在", Toast.LENGTH_SHORT).show();
+                    }
+                    cursor.moveToFirst();
+                    while (!cursor.isAfterLast()) {
+                        if (cursor.getString(cursor.getColumnIndex("password")).equals(password)) {
+                            Intent intent1 = new Intent(this, SignIn.class);
+                            startActivity(intent1);
+                        } else {
+                            Toast.makeText(this, "账号或密码错误", Toast.LENGTH_SHORT).show();
+                        }
+                        cursor.moveToNext();
+                    }
+                    cursor.close();
+                    db.close();
+                    break;
                 }
-//                Cursor cursor = db.query("user", new String[]{"password"},
-//                        "where count = ?", new String[]{count}, null, null, null);
-//                Cursor cursor = db.query("user", null,
-//                        null, null, null, null, null);
-                Cursor cursor = db.rawQuery("select * from user where count = ?", new String[]{"1"});
-                cursor.moveToFirst();
-                while (!cursor.isAfterLast()) {
-                    String ct = cursor.getString(0);
-                    String pw = cursor.getString(1);
-                    Toast.makeText(this, ct + pw, Toast.LENGTH_SHORT).show();
-                    cursor.moveToNext();
-                }
-                cursor.close();
-                break;
         }
     }
 }
