@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="名称：清洁"
+        android:textSize="20dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/item_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="类型：家政"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/item_space2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/item_category"
+            android:text="       " />
+
+        <TextView
+            android:id="@+id/item_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/item_space2"
+            android:text="薪酬:"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/item_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="内容：哒哒哒哒哒哒哒哒"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/item_startTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始时间：222222"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/item_endTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/item_space2"
+        android:text="结束时间：222"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/item_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="地址"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/item_phoneNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="联系方式"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/item_isAccept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="是否被接单"
+        android:textSize="20dp" />
+
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_serviceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="服务名称："
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="服务类型："
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="服务内容："
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tv_startTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始时间："
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tv_endTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="结束时间："
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tv_pay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="薪酬："
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="地址："
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/tv_clientName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="服务者姓名："
+        android:textSize="20dp" />
+</LinearLayout>
