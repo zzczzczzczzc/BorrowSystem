@@ -2,6 +2,9 @@ package entity;
 
 public class ServiceInfo {
 
+    //客户姓名
+    private String clientName;
+    //服务名称
     private String name;
     private String category;
     private String content;
@@ -41,6 +44,14 @@ public class ServiceInfo {
 
     public String getStartTime() {
         return startTime;
+    }
+
+    public String getClientName() {
+        return clientName;
+    }
+
+    public void setClientName(String clientName) {
+        this.clientName = clientName;
     }
 
     public String getIsAccept() {

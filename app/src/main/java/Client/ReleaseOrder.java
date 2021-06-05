@@ -35,8 +35,8 @@ public class ReleaseOrder extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.release_order);
-        Intent intent = getIntent();
-        count = intent.getStringExtra("clientName");
+//        Intent intent = getIntent();
+//        count = intent.getStringExtra("clientName");
         init();
         rg_category.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -58,7 +58,7 @@ public class ReleaseOrder extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
-                values.put("clientName", count);
+//                values.put("clientName", count);
                 values.put("name", et_name.getText().toString());
                 values.put("content", et_content.getText().toString());
                 values.put("startTime", et_startTime.getText().toString());

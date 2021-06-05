@@ -8,7 +8,7 @@
         android:id="@+id/item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="名称：清洁"
+        android:text="名称：模板示例"
         android:textSize="20dp" />
 
     <RelativeLayout
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/item_space2"
-            android:text="薪酬:"
+            android:text="薪酬:200块"
             android:textSize="20dp" />
     </RelativeLayout>
 
@@ -42,14 +42,14 @@
         android:id="@+id/item_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="内容：哒哒哒哒哒哒哒哒"
+        android:text="内容：上门打扫清洁"
         android:textSize="20dp" />
 
     <TextView
         android:id="@+id/item_startTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="开始时间：222222"
+        android:text="开始时间：2021.6.4，下午2点"
         android:textSize="20dp" />
 
     <TextView
@@ -57,28 +57,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/item_space2"
-        android:text="结束时间：222"
+        android:text="结束时间：2021.6.4，下午3点"
         android:textSize="20dp" />
 
     <TextView
         android:id="@+id/item_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="地址"
+        android:text="地址：XXX街道XX小区XX栋XX号"
         android:textSize="20dp" />
 
     <TextView
         android:id="@+id/item_phoneNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="联系方式"
+        android:text="联系方式：18888888888"
         android:textSize="20dp" />
 
     <TextView
         android:id="@+id/item_isAccept"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="是否被接单"
+        android:text="是否被接单：否"
         android:textSize="20dp" />
 
 

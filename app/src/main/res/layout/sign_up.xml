@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/tv_count"
-            android:hint="请输入QQ邮箱" />
+            android:hint="请输入手机号码" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -82,12 +82,14 @@
             android:layout_toRightOf="@id/tv_tip">
 
             <RadioButton
+                android:id="@+id/rb_freelance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="自由职业者" />
 
             <RadioButton
-                android:layout_width="match_parent"
+                android:id="@+id/rb_client"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="客户" />
         </RadioGroup>
@@ -106,24 +108,30 @@
             android:text="请选择服务分类" />
 
         <TableRow
-            android:id="@+id/bg_freelance"
+            android:id="@+id/tr_service"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/tv_service">
 
             <CheckBox
+                android:id="@+id/cb_purchasing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="doClick"
                 android:text="代购" />
 
             <CheckBox
+                android:id="@+id/cb_domestic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="doClick"
                 android:text="家政" />
 
             <CheckBox
+                android:id="@+id/cb_drive"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="doClick"
                 android:text="出行" />
         </TableRow>
     </RelativeLayout>
@@ -134,6 +142,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#87CEFA"
-        android:textColor="#871F78"
-        android:text="完成" />
+        android:text="完成"
+        android:textColor="#871F78" />
 </LinearLayout>

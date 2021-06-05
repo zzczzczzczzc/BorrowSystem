@@ -25,8 +25,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 "drive boolean)");
         //服务表
         db.execSQL("Create table serviceInfo" +
-                "(clientName String not null," +
-                "name String not null," +
+//                "(clientName String not null," +
+                "(name String not null," +
                 "category String not null," +
                 "content String not null," +
                 "startTime String not null," +

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -53,6 +54,7 @@ public class ClientReleased extends AppCompatActivity {
             serviceInfo.setAddress(cursor.getString(cursor.getColumnIndex("address")));
             serviceInfo.setPhoneNum(cursor.getString(cursor.getColumnIndex("phoneNum")));
             serviceInfo.setIsAccept(cursor.getString(cursor.getColumnIndex("isAccept")));
+            serviceInfo.setFreelancePhoneNum(cursor.getString(cursor.getColumnIndex("freelancePhoneNum")));
             cursor.moveToNext();
             list.add(serviceInfo);
         }
@@ -80,29 +82,52 @@ public class ClientReleased extends AppCompatActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-//            ViewHolder holder;
-            View view = View.inflate(ClientReleased.this, R.layout.client_list_view, null);
-            TextView tv_name = (TextView) view.findViewById(R.id.item_name);
-            TextView tv_category = (TextView) view.findViewById(R.id.item_category);
-            TextView tv_pay = (TextView) view.findViewById(R.id.item_pay);
-            TextView tv_content = (TextView) view.findViewById(R.id.item_content);
-            TextView tv_startTime = (TextView) view.findViewById(R.id.item_startTime);
-            TextView tv_endTime = (TextView) view.findViewById(R.id.item_endTime);
-            TextView tv_address = (TextView) view.findViewById(R.id.item_address);
-            TextView tv_phoneNum = (TextView) view.findViewById(R.id.item_phoneNum);
-            TextView tv_isAccepted = (TextView) view.findViewById(R.id.item_isAccept);
-            TextView tv_freelanceName = (TextView) view.findViewById(R.id.item_freelance);
-            TextView tv_freelancePhoneNum = (TextView) view.findViewById(R.id.item_freePhone);
-            tv_name.setText("名称：" + list.get(position).getName());
-            tv_category.setText("类型：" + list.get(position).getCategory());
-            tv_pay.setText("薪酬：" + list.get(position).getPay());
-            tv_content.setText("内容：" + list.get(position).getContent());
-            tv_startTime.setText("开始时间：" + list.get(position).getStartTime());
-            tv_endTime.setText("结束时间：" + list.get(position).getEndTime());
-            tv_address.setText("地址：" + list.get(position).getAddress());
-            tv_phoneNum.setText("联系方式：" + list.get(position).getPhoneNum());
-            tv_isAccepted.setText("是否已被接单：" + list.get(position).getIsAccept());
-            return view;
+            ViewHolder holder;
+            if (convertView == null) {
+                convertView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.client_list_view, parent, false);
+                holder = new ViewHolder();
+                holder.tv_name = (TextView) convertView.findViewById(R.id.item_name);
+                holder.tv_category = (TextView) convertView.findViewById(R.id.item_category);
+                holder.tv_pay = (TextView) convertView.findViewById(R.id.item_pay);
+                holder.tv_content = (TextView) convertView.findViewById(R.id.item_content);
+                holder.tv_startTime = (TextView) convertView.findViewById(R.id.item_startTime);
+                holder.tv_endTime = (TextView) convertView.findViewById(R.id.item_endTime);
+                holder.tv_address = (TextView) convertView.findViewById(R.id.item_address);
+                holder.tv_phoneNum = (TextView) convertView.findViewById(R.id.item_phoneNum);
+                holder.tv_isAccepted = (TextView) convertView.findViewById(R.id.item_isAccept);
+                holder.tv_freelanceName = (TextView) convertView.findViewById(R.id.item_freelance);
+                holder.tv_freelancePhoneNum = (TextView) convertView.findViewById(R.id.item_freePhone);
+                convertView.setTag(holder);
+            } else {
+                holder = (ViewHolder) convertView.getTag();
+            }
+            holder.tv_name.setText("名称：" + list.get(position).getName());
+            holder.tv_category.setText("类型：" + list.get(position).getCategory());
+            holder.tv_pay.setText("薪酬：" + list.get(position).getPay());
+            holder.tv_content.setText("内容：" + list.get(position).getContent());
+            holder.tv_startTime.setText("开始时间：" + list.get(position).getStartTime());
+            holder.tv_endTime.setText("结束时间：" + list.get(position).getEndTime());
+            holder.tv_address.setText("地址：" + list.get(position).getAddress());
+            holder.tv_phoneNum.setText("联系方式：" + list.get(position).getPhoneNum());
+            holder.tv_isAccepted.setText("是否已被接单：" + list.get(position).getIsAccept());
+            if (!list.get(position).getFreelancePhoneNum().equals("")) {
+                holder.tv_freelancePhoneNum.setText("接单者联系方式：" + list.get(position).getFreelancePhoneNum());
+            }
+            return convertView;
         }
+    }
+
+    class ViewHolder {
+        TextView tv_name;
+        TextView tv_category;
+        TextView tv_pay;
+        TextView tv_content;
+        TextView tv_startTime;
+        TextView tv_endTime;
+        TextView tv_address;
+        TextView tv_phoneNum;
+        TextView tv_isAccepted;
+        TextView tv_freelanceName;
+        TextView tv_freelancePhoneNum;
     }
 }

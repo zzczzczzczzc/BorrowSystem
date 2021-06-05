@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import Database.DBHelper;
+import entity.UserInfo;
+
 public class SignUp extends AppCompatActivity {
 
     EditText et_name;
@@ -24,14 +27,14 @@ public class SignUp extends AppCompatActivity {
     CheckBox cb_domestic;
     Button bt_complete;
     DBHelper helper;
-    UserInformation userInfo;
+    UserInfo userInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
         helper = new DBHelper(this);
-        userInfo = new UserInformation();
+        userInfo = new UserInfo();
         init();
         signUp();
     }

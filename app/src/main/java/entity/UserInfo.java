@@ -15,13 +15,6 @@ public class UserInfo {
     //家政
     private boolean domestic;
 
-    public String getClientName() {
-        return clientName;
-    }
-
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
-    }
 
     public void setName(String name) {
         this.name = name;

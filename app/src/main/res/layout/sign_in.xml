@@ -3,13 +3,74 @@
     android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/sign_in_background"
+    android:background="@drawable/background2"
     android:orientation="vertical">
 
     <RelativeLayout
-        android:id="@+id/rl"
+        android:id="@+id/rl_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="客户："
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/bt_released"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_client"
+            android:onClick="click"
+            android:text="已发布订单"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/bt_release"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/bt_released"
+            android:onClick="click"
+            android:text="发布订单"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_1">
+
+        <TextView
+            android:id="@+id/tv_freelance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="自由职业者："
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/bt_accepted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_freelance"
+            android:onClick="click"
+            android:text="已接受订单"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_2">
 
         <TextView
             android:id="@+id/tv_1"
@@ -21,9 +82,11 @@
             android:textStyle="bold" />
 
         <RadioGroup
+            android:id="@+id/bg_service"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/tv_1">
+            android:layout_toRightOf="@+id/tv_1"
+            android:onClick="click">
 
 
             <RadioButton
@@ -56,30 +119,24 @@
                 android:textSize="20dp" />
 
         </RadioGroup>
-
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_3"
+        android:text="接单请点击以下项目"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/lv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rl">
+        android:layout_below="@id/tv_tip">
 
     </ListView>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-
-        <Button
-            android:id="@+id/bt_accept"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#B0C4DE"
-            android:text="接单"
-            android:textColor="#00008B"
-            android:textSize="20dp" />
-    </RelativeLayout>
 
 </RelativeLayout>

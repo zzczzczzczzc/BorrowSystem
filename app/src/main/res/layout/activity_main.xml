@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="账号："
-                android:textSize="30dp" />
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/et_count"
@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/tv_count"
                 android:hint="请输入账号"
-                android:textSize="30dp" />
+                android:textSize="20dp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="密码："
-                android:textSize="30dp" />
+                android:textSize="20dp" />
 
             <EditText
                 android:id="@+id/et_password"
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/tv_password"
                 android:hint="请输入密码"
-                android:textSize="30dp" />
+                android:textSize="20dp" />
         </RelativeLayout>
 
     </LinearLayout>
